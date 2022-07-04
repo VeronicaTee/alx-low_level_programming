@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - This function prints the assigned string
- * Return: 0
+ * Return: Always zero
  */
 int main(void)
 {
