@@ -1,17 +1,20 @@
-#include <stdio.h>
 #include "main.h"
 /**
- * main - This function calls the _putchar funstion
- * _putchar - This functiion prints _putchar
+ * printchar - This function prints _putchar
  * Return: Always zero
  */
 
-int main(void)
+void printchar(void)
 {
-	_putchar();
+	_putchar("_");
+	_putchar("p");
+	_putchar("u");
+	_putchar("t");
+	_putchar("c");
+	_putchar("h");
+	_putchar("a");
+	_putchar("r");
+	_putchar("\n");
+
 	return (0);
-}
-void _putchar(void)
-{
-	printf("_putchar");
 }
