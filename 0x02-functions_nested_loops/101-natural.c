@@ -1,5 +1,8 @@
 #include "main.h"
 
+/**
+ * main - this function prints the sum
+ */
 int main(void)
 {
 	int i, sum = 0;
