@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * alphabet - prints the alphabets in lowercsae
+ * print_alphabet - prints the alphabets in lowercsae
  */
-void alphabet(void)
+void print_alphabet(void)
 {
 	char lett;
 
