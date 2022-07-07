@@ -2,6 +2,8 @@
 
 /**
  * main - this function prints the sum
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
