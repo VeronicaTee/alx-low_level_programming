@@ -5,6 +5,9 @@
  *
  * Return: Always 0.
  */
+
+void revstr( char *s);
+
 int main(void)
 {
     char *str;
