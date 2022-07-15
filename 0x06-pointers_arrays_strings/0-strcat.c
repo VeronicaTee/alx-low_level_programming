@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include <string.h>
 
 /**
  * strcat - Concatenates the string @src points to, including the terminating
@@ -9,6 +9,9 @@
  *
  * Return: A pointer to the destination string @dest.
  */
+
+char *strcat(char *dest, const char *src);
+char *strncat(char *dest, const char *src, size_t n);
 
 char *_strcat(char *dest, char *src)
 {
