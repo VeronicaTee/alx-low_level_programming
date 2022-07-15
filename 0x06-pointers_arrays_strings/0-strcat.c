@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * strcat - Concatenates the string @src points to, including the terminating
@@ -9,17 +9,26 @@
  * Return: A pointer to the destination string @dest.
  */
 
-char *_strcat(char *dest, char *src)
+void *_strcat(char *dest, char *src)
 {
-	int i, j;
+	int l1, l2, len;
 
-	i = j = 0;
-	while (*(dest + i))
-		i++;
-	while ((*(dest + i) = *(src + j)))
+	l1 = l2 = 0;
+	while (dest[l1] != '\0')
 	{
-		i++;
-		j++;
+		l1++;
+	}
+	while (src[l2] != '\0')
+	{
+		l2++;
+	}
+	len = l2;
+	l2 = 0;
+	while (l2 < len)
+	{
+		dest[l1] = src[l2];
+		l1++;
+		l2++;
 	}
 	return (dest);
 }
