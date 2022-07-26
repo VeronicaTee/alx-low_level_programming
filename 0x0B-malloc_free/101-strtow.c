@@ -13,7 +13,7 @@ int word_count(char *str)
 	int i;
 
 	i = count = 0;
-	while (*(str + index) && *(str + index) != ' ')
+	while (*(str + i) && *(str + i) != ' ')
 	{
 		count++;
 		i++;
