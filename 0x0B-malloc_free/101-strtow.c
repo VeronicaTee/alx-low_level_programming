@@ -30,8 +30,8 @@ int word_count(char *str)
  */
 int *find_words_len(char *str, int words)
 {
-
-	int index = 0, words = 0, len = 0;
+	int index = 0, len = 0;
+	words = 0;
 
 	for (index = 0; *(str + index); index++)
 		len++;
