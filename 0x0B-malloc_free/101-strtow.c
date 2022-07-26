@@ -28,10 +28,9 @@ int word_count(char *str)
  *
  * Return: Combined length of words
  */
-int *find_words_len(char *str, int words)
+int find_words_len(char *str)
 {
-	int index = 0, len = 0;
-	words = 0;
+	int index = 0, len = 0, words = 0;
 
 	for (index = 0; *(str + index); index++)
 		len++;
@@ -41,7 +40,7 @@ int *find_words_len(char *str, int words)
 		if (*(str + index) != ' ')
 		{
 			words++;
-			index += word_len(str + index);
+			index += word_count(str + index);
 		}
 	}
 
