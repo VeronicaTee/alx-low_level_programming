@@ -56,7 +56,7 @@ int find_words_len(char *str)
 char **strtow(char *str)
 {
 	char **nstr;
-	int words, i, j, k, cur_words, *sizes;
+	int words, i, j, k, cur_words, sizes;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -64,7 +64,7 @@ char **strtow(char *str)
 	sizes = malloc(words * sizeof(int));
 	if (sizes == NULL)
 		return (NULL);
-	sizes = find_words_len(str, words);
+	sizes = find_words_len(str);
 	nstr = malloc((words + 1) * sizeof(char *));
 	if (nstr == NULL)
 		return (NULL);
