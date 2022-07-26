@@ -53,46 +53,47 @@ int find_words_len(char *str)
  *
  * Return: Return pointer to an array of strings, NULL if it fails
  */
+
 char **strtow(char *str)
 {
-	char **nstr;
-	int words, i, j, k, cur_words, sizes;
+	char **strings;
+	int index = 0, words, w, letters, l;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	words = word_count(str);
-	sizes = malloc(words * sizeof(int));
-	if (sizes == NULL)
+
+	words = find_words_len(str);
+	if (words == 0)
 		return (NULL);
-	sizes = find_words_len(str);
-	nstr = malloc((words + 1) * sizeof(char *));
-	if (nstr == NULL)
+
+	strings = malloc(sizeof(char *) * (words + 1));
+	if (strings == NULL)
 		return (NULL);
-	i = j = k = 0;
-	while (i < words && str[j] != '\0')
+
+	for (w = 0; w < words; w++)
 	{
-		cur_words = i;
-		nstr[i] = malloc(sizes[i] + sizeof(char));
-		if (nstr[i] == NULL)
+		while (str[index] == ' ')
+			index++;
+
+		letters = word_count(str + index);
+
+		strings[w] = malloc(sizeof(char) * (letters + 1));
+
+		if (strings[w] == NULL)
 		{
-			for (i = i - 1; i >= 0; i--)
-				free(nstr[i--]);
-			free(nstr);
+			for (; w >= 0; w--)
+				free(strings[w]);
+
+			free(strings);
 			return (NULL);
 		}
-		while (str[j] != '\0' && i == cur_words)
-		{
-			if (str[j] != ' ')
-			{
-				while (str[j] != '\0' && str[j] != ' ')
-				{
-					nstr[i][k] = str[j]; j++; k++;
-				}
-				nstr[i][k] = '\0'; i++; k = 0;
-			}
-			j++;
-		}
+
+		for (l = 0; l < letters; l++)
+			strings[w][l] = str[index++];
+
+		strings[w][l] = '\0';
 	}
-	nstr[i] = NULL;	free(sizes);
-	return (nstr);
+	strings[w] = NULL;
+
+	return (strings);
 }
