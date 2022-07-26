@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -12,13 +13,9 @@ int word_count(char *str)
 	int i;
 
 	i = count = 0;
-	while (str[i] != '\0')
+	while (*(str + index) && *(str + index) != ' ')
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-		{
-			count++;
-			i++;
-		}
+		count++;
 		i++;
 	}
 	return (count);
@@ -33,30 +30,22 @@ int word_count(char *str)
  */
 int *find_words_len(char *str, int words)
 {
-	int i, word, len;
-	int *sizes;
 
-	sizes = malloc(words * sizeof(int));
-	if (sizes == NULL)
-		return (NULL);
-	i = word = 0;
-	while (word < words)
+	int index = 0, words = 0, len = 0;
+
+	for (index = 0; *(str + index); index++)
+		len++;
+
+	for (index = 0; index < len; index++)
 	{
-		if (str[i] != ' ')
+		if (*(str + index) != ' ')
 		{
-			len = 0;
-			while (str[i] != ' ')
-			{
-				len++;
-				i++;
-			}
-			len++;
-			sizes[word] = len;
-			word++;
+			words++;
+			index += word_len(str + index);
 		}
-		i++;
 	}
-	return (sizes);
+
+	return (words);
 }
 
 /**
