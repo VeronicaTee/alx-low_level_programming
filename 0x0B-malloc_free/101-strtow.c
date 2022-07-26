@@ -23,8 +23,7 @@ int word_count(char *str)
 
 /**
  * find_words_len - Find length of all the words in a string
- * @str: String to check length of words in
- * @words: Number of words
+ * @str: String to check length of words in it
  *
  * Return: Combined length of words
  */
