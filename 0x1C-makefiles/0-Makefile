@@ -12,7 +12,3 @@ student.o: student.c student.h
 
 teacher.o: teacher.c teacher.h
 	$(CC) $(CFLAGS) -c teacher.c
-
-clean:
-	rm -f school *.o
-
