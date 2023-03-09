@@ -1,5 +1,6 @@
 CC=gcc
 CFLAGS=-Wall -Werror -g
+all: school
 
 school: school.o student.o teacher.o
 	$(CC) $(CFLAGS) -o school school.o student.o teacher.o
