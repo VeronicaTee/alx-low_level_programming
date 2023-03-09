@@ -1,0 +1,18 @@
+CC=gcc
+CFLAGS=-Wall -Werror -g
+
+school: school.o student.o teacher.o
+	$(CC) $(CFLAGS) -o school school.o student.o teacher.o
+
+school.o: school.c student.h teacher.h
+	$(CC) $(CFLAGS) -c school.c
+
+student.o: student.c student.h
+	$(CC) $(CFLAGS) -c student.c
+
+teacher.o: teacher.c teacher.h
+	$(CC) $(CFLAGS) -c teacher.c
+
+clean:
+	rm -f school *.o
+
