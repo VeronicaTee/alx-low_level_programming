@@ -1,4 +1,4 @@
 # Makefile 0
 
-all: main.c holberton.c
-	gcc-4.8 main.c holberton.c -o holberton
+all: main.c school.c
+	main.c school.c -o school
