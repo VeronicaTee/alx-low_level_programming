@@ -1,18 +1,4 @@
-CC=gcc
-CFLAGS=-Wall -Werror -g
-all: school
+# Makefile 0
 
-school: school.o student.o teacher.o
-	$(CC) $(CFLAGS) -o school school.o student.o teacher.o
-
-school.o: school.c student.h teacher.h
-	$(CC) $(CFLAGS) -c school.c
-
-student.o: student.c student.h
-	$(CC) $(CFLAGS) -c student.c
-
-teacher.o: teacher.c teacher.h
-	$(CC) $(CFLAGS) -c teacher.c
-
-clean:
-	rm -f school $(OBJS)
+all: main.c holberton.c
+	gcc-4.8 main.c holberton.c -o holberton
